@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMasterPage.master.cs" Inherits="UserMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Jewellery Store</title>    
+    <link href="css/UserMasterStyleSheet.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="page">
+            <div class="header">
+                <div class="title"></div>
+                <div class="loginDisplay">
+                    <table style="width: auto; background-color: black; height: 25px;">
+                        <tr>
+                            <td style="text-align: left;">
+                                <asp:ImageButton ID="ImgBtnLogo" runat="server" ImageUrl="~/images/header23.jpg" Height="65px" />
+                            </td>
+
+
+                            <td style="width: 100%; text-align: right;">
+
+
+                                <table style="text-align: right; width: auto;">
+                                    <tr>
+                                        <td style="width: 55%;">
+                                            <asp:Label ID="LblWelcome" runat="server" Font-Bold="False" Font-Size="Medium" ForeColor="White">WELCOME</asp:Label>
+                                        </td>
+                                        <td>
+                                            &nbsp;</td>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnProfile" runat="server" ImageUrl="~/images/generaluser.png" Width="35px" PostBackUrl="~/ViewUserProfile.aspx" ToolTip="View Profile" BorderColor="Gray" BorderStyle="Solid" BorderWidth="1px"  />
+                                        </td>
+                                        <td style="width: 60px;">
+                                            <asp:Label ID="LblCartCnt" runat="server" Text="0" ForeColor="Red" Font-Bold="True" Font-Size="Larger"></asp:Label>
+                                            <asp:ImageButton ID="imgBtnCart" runat="server" ImageUrl="~/Images/cart-icn1.png" Width="30px" ToolTip="Cart" Height="30px" PostBackUrl="~/ViewCart.aspx" />
+                                        </td>
+
+                                        <td>
+                                            <asp:ImageButton ID="ImgBtnLogin" runat="server" ImageUrl="~/images/signin-button.png" PostBackUrl="~/UserLogin.aspx" ToolTip="Login" Height="30px" />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnNew" runat="server" ImageUrl="~/images/signup-button.png" PostBackUrl="~/UserRegistration.aspx" ToolTip="New Registration" Height="30px"  />
+                                        </td>
+                                        <td>
+                                            <asp:ImageButton ID="imgBtnLogout" runat="server" ImageUrl="~/images/signout-button.png" ToolTip="Logout" Height="30px" OnClick="imgBtnLogout_Click" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear HideSkipLink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" Orientation="Horizontal" IncludeStyleBlock="false" Font-Size="Small">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="Home.aspx" Text="Home"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ViewMyOrder.aspx" Text="View My Order" Value="View My Order"></asp:MenuItem>
+                            <asp:MenuItem Text="Deal of the Day" Value="Deal of the Day" NavigateUrl="~/DealOfTheDay.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Mangalsutra" Value="Mangalsutra" NavigateUrl="~/ViewJewellery.aspx?category=Mangalsutra"></asp:MenuItem>
+                            <asp:MenuItem Text="Bangles" Value="Bangles" NavigateUrl="~/ViewJewellery.aspx?category=Bangles"></asp:MenuItem>
+                            <asp:MenuItem Text="Rings" Value="Rings" NavigateUrl="~/ViewJewellery.aspx?category=Rings"></asp:MenuItem>
+                            <asp:MenuItem Text="Earrings" Value="Earrings" NavigateUrl="~/ViewJewellery.aspx?category=EarRings"></asp:MenuItem>
+                            <asp:MenuItem Text="Pendants" Value="Pendants" NavigateUrl="~/ViewJewellery.aspx?category=Pendants"></asp:MenuItem>
+                            <asp:MenuItem Text="Gold" Value="Gold" NavigateUrl="~/ViewJewellery.aspx?category=Gold"></asp:MenuItem>
+                            <asp:MenuItem Text="Silver" Value="Silver" NavigateUrl="~/ViewJewellery.aspx?category=Silver"></asp:MenuItem>
+                            <asp:MenuItem Text="All Jewelery" Value="All Jewelery" NavigateUrl="~/ViewJewellery.aspx?category=All"></asp:MenuItem>
+                            <asp:MenuItem Text="Coins" Value="Coins" NavigateUrl="~/ViewJewellery.aspx?category=Coins"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/AboutUs.aspx" Text="About Us"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div class="clear"></div>
+            <div class="footer">
+                <ul>
+                    <li><a href="Home.aspx">Home</a> </li>
+                    <li><a href="ContactUs.aspx">Contact Us</a> </li>
+                    <li><a href="About Us.aspx">About Us</a> </li>
+                    <li><a href="Admin/AdminHome.aspx">Admin</a></li>
+                    <li><a href="ViewGallery.aspx">Gallery</a></li>
+                </ul>
+                <p>
+                    Copyright &copy ; All rights reserved.2023
+                    <br />
+                    Designed by:
+                    <br />
+                    1.SAMARTH
+                </p>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
